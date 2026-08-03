@@ -21,18 +21,18 @@ export default function GestorMermaForm() {
           title: '¡Éxito!',
           text: `Tus recursos fueron asignados a ${data.receptor}. Has evitado ${data.co2Evitado}kg de CO2.`,
           icon: 'success',
-          background: '#020617',
-          color: '#ffffff',
-          confirmButtonColor: '#D4AF37'
+          background: '#1D1D1F',
+          color: '#FFFFFF',
+          confirmButtonColor: '#4F8A5B' 
         });
       } else {
         Swal.fire({
           title: 'Aviso',
           text: data.error || 'No se pudo realizar el emparejamiento.',
           icon: 'warning',
-          background: '#020617',
-          color: '#ffffff',
-          confirmButtonColor: '#D4AF37'
+          background: '#1D1D1F',
+          color: '#FFFFFF',
+          confirmButtonColor: '#D6A34A' 
         });
       }
     } catch (error) {
@@ -40,9 +40,9 @@ export default function GestorMermaForm() {
         title: 'Error', 
         text: 'Hubo un problema de conexión', 
         icon: 'error',
-        background: '#020617',
-        color: '#ffffff',
-        confirmButtonColor: '#D4AF37'
+        background: '#1D1D1F',
+        color: '#FFFFFF',
+        confirmButtonColor: '#C44A5A' 
       });
     }
   };
@@ -56,26 +56,26 @@ export default function GestorMermaForm() {
     >
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         <div>
-          <label className="block text-[10px] font-mono font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">Tipo de Residuo</label>
+          <label className="block text-[10px] font-mono font-bold text-white/50 mb-2 uppercase tracking-[0.2em] ml-4">Tipo de Residuo</label>
           <select 
             value={tipo} 
             onChange={(e) => setTipo(e.target.value)}
-            className="w-full border border-white/10 rounded-xl p-4 bg-[#020617]/50 text-white focus:ring-1 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all hover:bg-white/5"
+            className="w-full border border-white/20 rounded-full p-4 bg-black/20 text-white focus:ring-1 focus:ring-[#7A1F3D] focus:border-[#7A1F3D] outline-none transition-all backdrop-blur-md shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] appearance-none cursor-pointer"
           >
-            <option value="comida">Comida</option>
-            <option value="organico">Orgánico</option>
-            <option value="vidrio">Vidrio</option>
-            <option value="textil">Textil</option>
+            <option value="comida" className="bg-[#1D1D1F]">Comida</option>
+            <option value="organico" className="bg-[#1D1D1F]">Orgánico</option>
+            <option value="vidrio" className="bg-[#1D1D1F]">Vidrio</option>
+            <option value="textil" className="bg-[#1D1D1F]">Textil</option>
           </select>
         </div>
         <div>
-          <label className="block text-[10px] font-mono font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">Cantidad (kg)</label>
+          <label className="block text-[10px] font-mono font-bold text-white/50 mb-2 uppercase tracking-[0.2em] ml-4">Cantidad (kg)</label>
           <input 
             type="number" 
             min="1"
             value={cantidad} 
             onChange={(e) => setCantidad(Number(e.target.value))}
-            className="w-full border border-white/10 rounded-xl p-4 bg-[#020617]/50 text-white focus:ring-1 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all hover:bg-white/5"
+            className="w-full border border-white/20 rounded-full p-4 bg-black/20 text-white focus:ring-1 focus:ring-[#7A1F3D] focus:border-[#7A1F3D] outline-none transition-all backdrop-blur-md shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
             required
           />
         </div>
@@ -83,7 +83,7 @@ export default function GestorMermaForm() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           type="submit" 
-          className="mt-4 bg-[#D4AF37] hover:bg-white text-[#020617] font-bold py-4 px-4 rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-colors w-full uppercase tracking-widest text-[10px] font-mono"
+          className="mt-4 bg-[#7A1F3D] hover:bg-[#92284B] text-white font-bold py-4 px-4 rounded-full shadow-lg transition-all w-full uppercase tracking-widest text-[10px] font-mono"
         >
           Emparejar y Enviar
         </motion.button>

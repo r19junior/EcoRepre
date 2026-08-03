@@ -2,107 +2,416 @@
 // frontend/src/pages/index.astro
 import '../styles/global.css';
 ---
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoLoop Arequipa</title>
     <style>
       body {
-        background: radial-gradient(circle at top, #0f172a 0%, #020617 50%, #000000 100%);
-        color: #f8fafc;
+        background-color: #101114;
+        color: #F7F8FA;
         min-height: 100vh;
       }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+      .glass-bubble {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border-radius: 24px;
       }
-      .glow-gold {
-        box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-      }
-      .hover-glow-gold:hover {
-        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
-        border-color: #D4AF37;
-      }
-      .gradient-text-gold {
-        background: linear-gradient(to right, #F9D423, #D4AF37, #C5A028);
+      .gradient-text-guinda {
+        background: linear-gradient(135deg, #92284B, #7A1F3D);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
-  <body class="font-sans antialiased overflow-x-hidden selection:bg-[#D4AF37] selection:text-[#020617] relative flex flex-col justify-between min-h-screen">
+  <body class="font-sans antialiased overflow-x-hidden selection:bg-[#7A1F3D] selection:text-white relative">
     
-    <!-- Dynamic Background Elements -->
-    <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-900 mix-blend-screen filter blur-[150px] opacity-30 -z-10 animate-pulse"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#D4AF37] mix-blend-screen filter blur-[150px] opacity-10 -z-10"></div>
-    
-    <!-- Navbar (Sticky, Dynamic) -->
-    <nav class="sticky top-0 z-50 bg-[#020617]/70 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <!-- Imagen de Fondo Principal Continua -->
+    <div class="fixed inset-0 z-[-20] bg-[url('/hero.png')] bg-cover bg-center"></div>
+    <div class="fixed inset-0 z-[-19] bg-gradient-to-b from-[#101114]/30 via-[#101114]/70 to-[#101114]"></div>
+
+    <!-- 1. Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div class="flex items-center gap-3 group cursor-pointer">
-          <div class="w-10 h-10 rounded-full border border-[#D4AF37]/50 flex items-center justify-center group-hover:glow-gold transition-all duration-500">
-            <span class="font-bold text-[#D4AF37] text-sm">ECO</span>
+        <a href="/" class="flex items-center gap-3 cursor-pointer">
+          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+            <span class="font-bold text-[#7A1F3D] text-xs">ECO</span>
           </div>
-          <span class="font-bold tracking-widest text-lg text-slate-200 group-hover:text-white transition-colors">LOOP</span>
+          <span class="font-bold tracking-widest text-lg text-white">LOOP</span>
+        </a>
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white/80">
+          <a href="#" class="text-[#92284B] font-bold">Inicio</a>
+          <a href="#que-es" class="hover:text-white transition-colors">¿Qué es EcoLoop?</a>
+          <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
+          <a href="#impacto" class="hover:text-white transition-colors">Impacto</a>
+          <a href="/turista" class="hover:text-white transition-colors">Lugares</a>
+          <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="/empresa" class="hidden md:block bg-[#7A1F3D] hover:bg-[#92284B] text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transition-all">
+            Unirse a la Red
+          </a>
+          <span class="text-white/80 text-sm font-semibold cursor-pointer hover:text-white">ES ▾</span>
         </div>
       </div>
     </nav>
 
-    <!-- Main Hero -->
-    <main class="flex-grow flex flex-col items-center justify-center p-6 text-center relative z-10 w-full max-w-7xl mx-auto mt-10 md:mt-0">
+    <main class="relative z-10 pt-32 pb-20 w-full">
       
-      <div class="inline-block px-4 py-1.5 rounded-full glass-panel border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-widest text-[#D4AF37] mb-8 animate-[bounce_3s_infinite]">
-        Plataforma Tecnológica B2B / B2C
-      </div>
-
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tight leading-tight">
-        Conectando el <br class="hidden md:block" />
-        <span class="gradient-text-gold">Futuro Sostenible</span>
-      </h1>
-      
-      <p class="text-lg md:text-xl text-slate-400 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
-        Impulsamos la economía circular y el turismo responsable en Arequipa a través de tecnología de vanguardia y datos en tiempo real.
-      </p>
-
-      <!-- Action Cards (Dynamic Layout) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl mx-auto">
+      <!-- 2. Hero + Impact Panel -->
+      <section class="max-w-7xl mx-auto px-6 mb-16 flex flex-col lg:flex-row items-center gap-12">
+        <!-- Hero Text -->
+        <div class="flex-1 text-center lg:text-left">
+          <div class="inline-block px-4 py-1.5 rounded-full glass-bubble border border-white/20 text-[10px] font-semibold uppercase tracking-widest text-white/80 mb-6">
+            LUXURY CIRCULAR TECH
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight leading-tight text-white drop-shadow-md">
+            Conectando el <br />
+            <span class="text-[#92284B] drop-shadow-sm">Futuro Sostenible</span>
+          </h1>
+          <p class="text-sm md:text-base text-white/80 mb-8 max-w-xl font-light leading-relaxed mx-auto lg:mx-0">
+            EcoLoop Arequipa es la infraestructura digital que transforma los residuos del turismo en oportunidades para toda la ciudad.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <a href="/turista" class="bg-[#7A1F3D] text-white px-6 py-3 rounded-full font-bold shadow-[0_10px_30px_rgba(122,31,61,0.3)] hover:bg-[#92284B] transition-all flex items-center gap-2 text-sm">
+              Explorar plataforma →
+            </a>
+            <a href="#" class="glass-bubble text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all border border-white/20 text-sm">
+              Ver impacto en tiempo real
+            </a>
+          </div>
+        </div>
         
-        <a href="/turista" class="glass-panel group relative overflow-hidden rounded-2xl p-8 flex flex-col items-center justify-center hover:scale-105 transition-all duration-500 hover-glow-gold">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/20 transition-colors border border-white/5">
-            <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <!-- Impact Panel -->
+        <div class="w-full lg:w-[420px] glass-bubble p-6 border border-white/20 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/10 to-transparent pointer-events-none"></div>
+          <h3 class="text-white font-bold text-sm mb-4 relative z-10">Impacto generado hoy</h3>
+          <div class="grid grid-cols-2 gap-4 relative z-10">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span class="text-[#4F8A5B] block mb-1 text-sm">📈</span>
+              <div class="text-xl font-bold text-white">2,543 <span class="text-xs font-normal text-white/60">kg</span></div>
+              <div class="text-[10px] text-white/50 mt-1">Material recuperado</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span class="text-white/60 block mb-1 text-sm">☁️</span>
+              <div class="text-xl font-bold text-white">1.82 <span class="text-xs font-normal text-white/60">t CO₂</span></div>
+              <div class="text-[10px] text-white/50 mt-1">Emisiones evitadas</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span class="text-blue-400 block mb-1 text-sm">💧</span>
+              <div class="text-xl font-bold text-white">3,420 <span class="text-xs font-normal text-white/60">L</span></div>
+              <div class="text-[10px] text-white/50 mt-1">Agua ahorrada</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <span class="text-[#CFAE5D] block mb-1 text-sm">🪙</span>
+              <div class="text-xl font-bold text-white">S/ 5,680</div>
+              <div class="text-[10px] text-white/50 mt-1">Valor recuperado</div>
+            </div>
           </div>
-          <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">Vista Turista</h2>
-          <p class="text-sm text-slate-400 text-center">Explora el directorio EcoScore y descubre lugares sostenibles.</p>
-          
-          <div class="mt-8 flex items-center text-[#D4AF37] text-sm font-semibold tracking-wider">
-            INGRESAR AL MODO B2C 
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-          </div>
-        </a>
+        </div>
+      </section>
 
-        <a href="/empresa" class="glass-panel group relative overflow-hidden rounded-2xl p-8 flex flex-col items-center justify-center hover:scale-105 transition-all duration-500 hover-glow-gold">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/20 transition-colors border border-white/5">
-            <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+      <!-- 3. Modules -->
+      <section id="modulos" class="scroll-mt-24 max-w-7xl mx-auto px-6 mb-24 overflow-x-auto hide-scrollbar pb-4">
+        <div class="flex gap-4 min-w-max">
+          <!-- Modulo 1 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">📋</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">01</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Registro Inteligente</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Digitaliza materiales antes de ser residuos.</p>
           </div>
-          <h2 class="text-2xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">Vista Empresa</h2>
-          <p class="text-sm text-slate-400 text-center">Panel B2B para gestión de mermas y monitoreo de métricas.</p>
-          
-          <div class="mt-8 flex items-center text-[#D4AF37] text-sm font-semibold tracking-wider">
-            INGRESAR AL MODO B2B 
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          <!-- Modulo 2 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">🧠</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">02</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Motor IA Match</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Conecta cada recurso con su mejor destino.</p>
           </div>
-        </a>
+          <!-- Modulo 3 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">🔄</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">03</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Banco Circular</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Intercambia dentro de la red colaborativa.</p>
+          </div>
+          <!-- Modulo 4 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">📊</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">04</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Dashboard de Impacto</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Visualiza el impacto en tiempo real.</p>
+          </div>
+          <!-- Modulo 5 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">🎯</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">05</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">EcoScore</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Evalúa el desempeño ecológico.</p>
+          </div>
+          <!-- Modulo 6 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">👥</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">06</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Turismo Responsable</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Inspira decisiones sostenibles.</p>
+          </div>
+          <!-- Modulo 7 -->
+          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
+            <span class="text-white/60 text-xl mb-2">⭐</span>
+            <span class="text-[10px] text-white/40 font-mono mb-1">07</span>
+            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">EcoPoints</h4>
+            <p class="text-[9px] text-white/50 leading-tight">Gana puntos y canjéalos.</p>
+          </div>
+        </div>
+      </section>
 
-      </div>
+      <!-- 4. ¿Qué es EcoLoop? -->
+      <section id="que-es" class="scroll-mt-24 max-w-7xl mx-auto px-6 mb-24 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-4">¿Qué es EcoLoop?</h2>
+          <p class="text-white/70 mb-4 text-sm font-light leading-relaxed">
+            EcoLoop Arequipa es un ecosistema digital de economía circular que conecta hoteles, restaurantes, artesanos, agricultores, recicladores, municipalidades y turistas en una red inteligente.
+          </p>
+          <p class="text-[#92284B] font-semibold text-sm leading-snug">
+            Los residuos del turismo nunca se convierten en basura, sino en oportunidades para toda la ciudad.
+          </p>
+        </div>
+        
+        <div class="flex flex-col items-center justify-center relative py-6">
+          <!-- RECUADRO IMAGEN CENTRAL -->
+          <div class="w-48 h-48 rounded-full glass-bubble flex items-center justify-center border border-white/20 relative z-10 overflow-hidden shadow-2xl">
+             <div class="text-center p-4">
+               <span class="text-white/30 text-[10px] block mb-1">[RECUADRO IMAGEN]</span>
+               <span class="text-white/50 text-xs font-bold">Logo 3D</span>
+             </div>
+          </div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#7A1F3D]/20 rounded-full blur-[40px] -z-10"></div>
+          <div class="mt-4 bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] text-white/80 rounded-full flex items-center gap-2 backdrop-blur-md">
+            <span>🌋</span> Hecho para Arequipa
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Nuestras Metas</h2>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full glass-bubble flex-shrink-0 flex items-center justify-center text-white/70 text-xs">📉</div>
+              <p class="text-xs text-white/70 leading-relaxed mt-1">Reducir la contaminación turística mediante reutilización y valorización.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full glass-bubble flex-shrink-0 flex items-center justify-center text-white/70 text-xs">🤝</div>
+              <p class="text-xs text-white/70 leading-relaxed mt-1">Generar impacto económico local conectando recursos con quienes más los necesitan.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full glass-bubble flex-shrink-0 flex items-center justify-center text-white/70 text-xs">🌱</div>
+              <p class="text-xs text-white/70 leading-relaxed mt-1">Promover turismo responsable e involucrar activamente a visitantes y negocios.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Lugares Potenciales -->
+      <section class="max-w-7xl mx-auto px-6 mb-24">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-3xl font-bold text-white">Lugares Potenciales en <span class="text-[#92284B]">Arequipa</span></h2>
+          <div class="hidden md:flex gap-2">
+            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 cursor-pointer hover:bg-white/10">&lt;</div>
+            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 cursor-pointer hover:bg-white/10">&gt;</div>
+          </div>
+        </div>
+        
+        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-4">
+          <!-- Card Lugar -->
+          <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
+            <!-- RECUADRO IMAGEN -->
+            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
+              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: CENTRO HISTÓRICO]</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-sm font-bold text-white mb-1">Centro Histórico</h3>
+              <p class="text-[10px] text-white/60 leading-relaxed">Hoteles boutique y cafés con alto potencial de recursos.</p>
+            </div>
+          </div>
+          <!-- Card Lugar -->
+          <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
+            <!-- RECUADRO IMAGEN -->
+            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
+              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: CAYMA]</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-sm font-bold text-white mb-1">Cayma & Yanahuara</h3>
+              <p class="text-[10px] text-white/60 leading-relaxed">Zonas residenciales y comerciales con fuerte actividad.</p>
+            </div>
+          </div>
+          <!-- Card Lugar -->
+          <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
+            <!-- RECUADRO IMAGEN -->
+            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
+              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: VALLE DEL COLCA]</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-sm font-bold text-white mb-1">Valle del Colca</h3>
+              <p class="text-[10px] text-white/60 leading-relaxed">Turismo sostenible con necesidades de gestión circular.</p>
+            </div>
+          </div>
+          <!-- Card Lugar -->
+          <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
+            <!-- RECUADRO IMAGEN -->
+            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
+              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: MOLLENDO]</span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-sm font-bold text-white mb-1">Mollendo & Camaná</h3>
+              <p class="text-[10px] text-white/60 leading-relaxed">Puertos con alto potencial de economía circular.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Beneficios + Banner -->
+      <section id="impacto" class="scroll-mt-24 max-w-7xl mx-auto px-6 mb-12">
+        <h2 class="text-3xl font-bold text-white mb-6">Beneficios para todos</h2>
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4 flex-1">
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
+              <span class="text-white/50 text-2xl mb-2">💼</span>
+              <h4 class="text-xs font-bold text-white mb-1">Para Negocios</h4>
+              <p class="text-[9px] text-white/50">Reduce costos y accede a beneficios.</p>
+            </div>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
+              <span class="text-white/50 text-2xl mb-2">🏙️</span>
+              <h4 class="text-xs font-bold text-white mb-1">Para la Ciudad</h4>
+              <p class="text-[9px] text-white/50">Menos residuos, más desarrollo.</p>
+            </div>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
+              <span class="text-white/50 text-2xl mb-2">👨‍👩‍👧‍👦</span>
+              <h4 class="text-xs font-bold text-white mb-1">Para la Comunidad</h4>
+              <p class="text-[9px] text-white/50">Nuevas oportunidades locales.</p>
+            </div>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
+              <span class="text-white/50 text-2xl mb-2">🌍</span>
+              <h4 class="text-xs font-bold text-white mb-1">Para el Planeta</h4>
+              <p class="text-[9px] text-white/50">Recursos para futuras generaciones.</p>
+            </div>
+          </div>
+          
+          <div class="flex-1 rounded-[2rem] bg-gradient-to-br from-[#7A1F3D]/80 to-[#431322]/90 backdrop-blur-md p-8 flex flex-col justify-center relative overflow-hidden border border-[#92284B]/50 shadow-2xl">
+            <div class="absolute right-[-10%] top-[-10%] w-64 h-64 bg-[#92284B]/20 rounded-full blur-[40px] pointer-events-none"></div>
+            <h3 class="text-2xl font-bold text-white mb-2 relative z-10">Únete al cambio</h3>
+            <p class="text-white/80 text-xs mb-6 relative z-10 max-w-sm leading-relaxed">
+              Sé parte de la red que está construyendo una Arequipa más limpia, próspera y sostenible.
+            </p>
+            <div class="relative z-10">
+              <button class="bg-white text-[#7A1F3D] px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+                Unirme ahora →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Estadísticas -->
+      <section class="max-w-7xl mx-auto px-6 mb-12">
+        <div class="glass-bubble p-6 border-white/10 rounded-full flex justify-around items-center text-center gap-4 flex-wrap">
+          <div class="flex items-center gap-3">
+             <span class="text-2xl text-white/40">🏢</span>
+             <div class="text-left">
+               <div class="text-xl font-bold text-white">+120</div>
+               <div class="text-[10px] text-white/50">Negocios registrados</div>
+             </div>
+          </div>
+          <div class="hidden md:block w-px h-8 bg-white/10"></div>
+          <div class="flex items-center gap-3">
+             <span class="text-2xl text-white/40">👥</span>
+             <div class="text-left">
+               <div class="text-xl font-bold text-white">+450</div>
+               <div class="text-[10px] text-white/50">Usuarios activos</div>
+             </div>
+          </div>
+          <div class="hidden md:block w-px h-8 bg-white/10"></div>
+          <div class="flex items-center gap-3">
+             <span class="text-2xl text-white/40">☁️</span>
+             <div class="text-left">
+               <div class="text-xl font-bold text-white">+18 t</div>
+               <div class="text-[10px] text-white/50">CO₂ evitadas</div>
+             </div>
+          </div>
+          <div class="hidden md:block w-px h-8 bg-white/10"></div>
+          <div class="flex items-center gap-3">
+             <span class="text-2xl text-white/40">♻️</span>
+             <div class="text-left">
+               <div class="text-xl font-bold text-white">+2.4 M</div>
+               <div class="text-[10px] text-white/50">Recursos valorizados</div>
+             </div>
+          </div>
+        </div>
+      </section>
+      
     </main>
-    
-    <footer class="py-6 text-center border-t border-white/5 bg-[#020617]/50 backdrop-blur-md">
-      <p class="text-xs text-slate-500 tracking-wider">© 2026 ECOLOOP AREQUIPA. DISEÑADO PARA EL FUTURO.</p>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-transparent relative z-10 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-6 h-6 rounded-full bg-[#7A1F3D] flex items-center justify-center">
+              <span class="font-bold text-white text-[8px]">ECO</span>
+            </div>
+            <span class="font-bold tracking-widest text-sm text-white">LOOP</span>
+          </div>
+          <p class="text-[10px] text-white/50 leading-relaxed">Conectamos recursos,<br/>transformamos Arequipa.</p>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold mb-3 text-xs">Navegación</h4>
+          <ul class="space-y-1.5 text-[10px] text-white/50">
+            <li><a href="#" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Módulos</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Impacto</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Lugares</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold mb-3 text-xs">Síguenos</h4>
+          <div class="flex gap-2">
+            <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#7A1F3D] hover:text-white cursor-pointer transition-colors text-[10px]">IG</div>
+            <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#7A1F3D] hover:text-white cursor-pointer transition-colors text-[10px]">FB</div>
+            <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#7A1F3D] hover:text-white cursor-pointer transition-colors text-[10px]">IN</div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold mb-3 text-xs">Recibe novedades</h4>
+          <div class="flex rounded-full overflow-hidden border border-white/20 bg-white/5 h-8">
+            <input type="email" placeholder="Ingresa tu correo" class="bg-transparent text-white px-3 py-1 w-full text-[10px] outline-none" />
+            <button class="bg-white/10 hover:bg-[#7A1F3D] px-3 text-white transition-colors text-[10px]">→</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[9px] text-white/30 pb-6">
+        <p>© 2026 EcoLoop Arequipa. Todos los derechos reservados.</p>
+        <div class="flex gap-4 mt-2 md:mt-0">
+          <a href="#" class="hover:text-white">Política de Privacidad</a>
+          <a href="#" class="hover:text-white">Términos y Condiciones</a>
+        </div>
+      </div>
     </footer>
+    
   </body>
 </html>

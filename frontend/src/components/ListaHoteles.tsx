@@ -17,14 +17,11 @@ export default function ListaHoteles() {
       .catch((err) => console.error(err));
   }, []);
 
-  // Variantes de Framer Motion para efecto cascada
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
@@ -45,29 +42,28 @@ export default function ListaHoteles() {
         <motion.div 
           key={hotel.id} 
           variants={itemVariants}
-          whileHover={{ scale: 1.05, y: -5 }}
-          className="bg-[#020617]/50 backdrop-blur-xl rounded-3xl border border-white/5 p-8 flex flex-col justify-between hover:border-[#D4AF37] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-colors group cursor-pointer relative overflow-hidden"
+          whileHover={{ scale: 1.02, y: -4 }}
+          className="bg-white/5 backdrop-blur-[32px] rounded-[40px] border border-white/20 p-8 flex flex-col justify-between hover:border-[#7A1F3D]/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all group cursor-pointer relative overflow-hidden"
         >
-          {/* Brillo dinámico de fondo */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-slate-100 mb-2 group-hover:text-[#D4AF37] transition-colors">{hotel.nombre}</h3>
-            <p className="text-slate-500 text-[10px] font-mono uppercase tracking-[0.2em] mb-8">Score Ambiental // B2C</p>
+            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#92284B] transition-colors">{hotel.nombre}</h3>
+            <p className="text-white/50 text-[10px] font-mono uppercase tracking-[0.2em] mb-8">Score Ambiental // B2C</p>
           </div>
           
           <div className="flex items-center justify-between relative z-10">
             <div className="flex flex-col">
-              <span className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400 group-hover:from-white group-hover:to-[#D4AF37] transition-all">
+              <span className={`text-5xl font-extrabold transition-colors ${hotel.ecoScore >= 80 ? 'text-[#4F8A5B]' : 'text-white'}`}>
                 {hotel.ecoScore}
               </span>
-              <span className="text-slate-500 text-[10px] font-mono uppercase tracking-[0.1em] mt-1">Puntos</span>
+              <span className="text-white/50 text-[10px] font-mono uppercase tracking-[0.1em] mt-1">Puntos</span>
             </div>
             
-            <span className={`px-4 py-2 rounded-full text-[10px] uppercase font-bold tracking-widest text-white shadow-sm border transition-all ${
+            <span className={`px-4 py-2 rounded-full text-[10px] uppercase font-bold tracking-widest shadow-sm border transition-all ${
               hotel.ecoScore >= 80 
-              ? 'bg-[#D4AF37]/10 border-[#D4AF37]/50 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-black' 
-              : 'bg-slate-800/50 border-slate-600 text-slate-400'
+              ? 'bg-[#CFAE5D]/10 border-[#CFAE5D]/50 text-[#CFAE5D]' 
+              : 'bg-white/10 border-white/20 text-white/70'
             }`}>
               {hotel.ecoScore >= 80 ? 'Platinum' : 'Standard'}
             </span>
