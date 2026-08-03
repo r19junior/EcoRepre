@@ -32,7 +32,7 @@ import '../styles/global.css';
           <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="flex items-center gap-4">
-          <a href="/turista#auth" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
+          <a href="/turista#auth" id="nav-login-btn" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
             Inicia tus Puntos
           </a>
           <a href="/empresa" class="hidden md:block bg-[#7A1F3D] hover:bg-[#92284B] text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transition-all">
@@ -59,96 +59,144 @@ import '../styles/global.css';
           <p class="text-sm md:text-base text-white/80 mb-8 max-w-xl font-light leading-relaxed mx-auto lg:mx-0">
             EcoLoop Arequipa es la infraestructura digital que transforma los residuos del turismo en oportunidades para toda la ciudad.
           </p>
-          <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-            <a href="/turista" class="bg-[#7A1F3D] text-white px-6 py-3 rounded-full font-bold shadow-[0_10px_30px_rgba(122,31,61,0.3)] hover:bg-[#92284B] transition-all flex items-center gap-2 text-sm">
+          <div class="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start mt-4">
+            <a href="/turista" class="bg-[#7A1F3D] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_30px_rgba(122,31,61,0.3)] hover:bg-[#92284B] transition-all flex items-center gap-2 text-base md:text-lg">
               Explorar plataforma →
             </a>
-            <a href="#" class="glass-bubble text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all border border-white/20 text-sm">
+            <a href="#" class="glass-bubble text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all border border-white/20 text-base md:text-lg">
               Ver impacto en tiempo real
             </a>
           </div>
         </div>
         
         <!-- Impact Panel -->
-        <div class="w-full lg:w-[420px] glass-bubble p-6 border border-white/20 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/10 to-transparent pointer-events-none"></div>
-          <h3 class="text-white font-bold text-sm mb-4 relative z-10">Impacto generado hoy</h3>
+        <div class="w-full lg:w-[420px] glass-bubble p-6 border border-white/20 relative overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/20 to-[#101114] pointer-events-none"></div>
+          
+          <h3 class="text-white font-bold text-sm mb-5 relative z-10 flex items-center justify-between">
+            <span>Impacto en la Red Local</span>
+            <span class="text-[9px] font-bold bg-[#4F8A5B]/20 text-[#4F8A5B] border border-[#4F8A5B]/50 px-2 py-1 rounded-full flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#4F8A5B] animate-pulse"></span> +12% hoy
+            </span>
+          </h3>
+          
           <div class="grid grid-cols-2 gap-4 relative z-10">
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span class="text-[#4F8A5B] block mb-1 text-sm">📈</span>
-              <div class="text-xl font-bold text-white">2,543 <span class="text-xs font-normal text-white/60">kg</span></div>
-              <div class="text-[10px] text-white/50 mt-1">Material recuperado</div>
+            <!-- Box 1: Empresas -->
+            <div class="bg-black/60 border border-white/10 rounded-2xl p-4 relative overflow-hidden group hover:border-[#7A1F3D]/50 transition-colors cursor-default">
+              <img src="/mod_hotel_1785800485064.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="relative z-10">
+                <div class="text-2xl font-bold text-white">124</div>
+                <div class="text-[10px] text-white/70 mt-0.5">Empresas en red</div>
+                <div class="text-[9px] text-[#4F8A5B] mt-1.5 font-bold">↑ 8 nuevos afiliados</div>
+              </div>
             </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span class="text-white/60 block mb-1 text-sm">☁️</span>
-              <div class="text-xl font-bold text-white">1.82 <span class="text-xs font-normal text-white/60">t CO₂</span></div>
-              <div class="text-[10px] text-white/50 mt-1">Emisiones evitadas</div>
+            
+            <!-- Box 2: Material -->
+            <div class="bg-black/60 border border-white/10 rounded-2xl p-4 relative overflow-hidden group hover:border-[#7A1F3D]/50 transition-colors cursor-default">
+              <img src="/mod_restaurante_1785800492796.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="relative z-10">
+                <div class="text-2xl font-bold text-white">2.5 <span class="text-xs font-normal text-white/60">ton</span></div>
+                <div class="text-[10px] text-white/70 mt-0.5">Material recuperado</div>
+                <div class="text-[9px] text-[#4F8A5B] mt-1.5 font-bold">↑ 15% mensual</div>
+              </div>
             </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span class="text-blue-400 block mb-1 text-sm">💧</span>
-              <div class="text-xl font-bold text-white">3,420 <span class="text-xs font-normal text-white/60">L</span></div>
-              <div class="text-[10px] text-white/50 mt-1">Agua ahorrada</div>
+            
+            <!-- Box 3: Emisiones -->
+            <div class="bg-black/60 border border-white/10 rounded-2xl p-4 relative overflow-hidden group hover:border-[#7A1F3D]/50 transition-colors cursor-default">
+              <img src="/mod_guia_1785800500716.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="relative z-10">
+                <div class="text-2xl font-bold text-white">1.8 <span class="text-xs font-normal text-white/60">t CO₂</span></div>
+                <div class="text-[10px] text-white/70 mt-0.5">Emisiones evitadas</div>
+                <div class="text-[9px] text-[#4F8A5B] mt-1.5 font-bold">↑ 9% mensual</div>
+              </div>
             </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-              <span class="text-[#CFAE5D] block mb-1 text-sm">🪙</span>
-              <div class="text-xl font-bold text-white">S/ 5,680</div>
-              <div class="text-[10px] text-white/50 mt-1">Valor recuperado</div>
+            
+            <!-- Box 4: Valor -->
+            <div class="bg-black/60 border border-white/10 rounded-2xl p-4 relative overflow-hidden group hover:border-[#7A1F3D]/50 transition-colors cursor-default">
+              <img src="/mod_foto_1785800509198.png" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="relative z-10">
+                <div class="text-2xl font-bold text-white">S/ 5.6K</div>
+                <div class="text-[10px] text-white/70 mt-0.5">Valor circulante local</div>
+                <div class="text-[9px] text-[#4F8A5B] mt-1.5 font-bold">↑ 22% mensual</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3. Modules -->
-      <section id="modulos" class="scroll-mt-24 max-w-7xl mx-auto px-6 mb-24 overflow-x-auto hide-scrollbar pb-4">
-        <div class="flex gap-4 min-w-max">
-          <!-- Modulo 1 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">📋</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">01</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Registro Inteligente</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Digitaliza materiales antes de ser residuos.</p>
+      <!-- 3. Modules (Infinite Marquee) -->
+      <section id="modulos" class="scroll-mt-24 w-full mb-24 overflow-hidden relative">
+        <!-- Contenedor transparente para difuminar bordes opcional -->
+        <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#101114] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#101114] to-transparent z-10 pointer-events-none"></div>
+        
+        <div class="marquee-content gap-6 pt-2 pb-6">
+          <!-- GRUPO 1 -->
+          <!-- Modulo 1: Hotel -->
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_hotel_1785800485064.png" alt="Hotel" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hotel</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Alojamientos sostenibles.</p>
+            </div>
           </div>
-          <!-- Modulo 2 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">🧠</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">02</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Motor IA Match</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Conecta cada recurso con su mejor destino.</p>
+          <!-- Modulo 2: Restaurante -->
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_restaurante_1785800492796.png" alt="Restaurante" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurante</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Gastronomía circular local.</p>
+            </div>
           </div>
-          <!-- Modulo 3 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">🔄</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">03</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Banco Circular</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Intercambia dentro de la red colaborativa.</p>
+          <!-- Modulo 3: Guías Turísticos -->
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_guia_1785800500716.png" alt="Guías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Guías Turísticos</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Rutas de mínimo impacto.</p>
+            </div>
           </div>
-          <!-- Modulo 4 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">📊</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">04</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Dashboard de Impacto</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Visualiza el impacto en tiempo real.</p>
+          <!-- Modulo 4: Fotografías -->
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_foto_1785800509198.png" alt="Fotografías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Fotografías</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Turismo responsable.</p>
+            </div>
           </div>
-          <!-- Modulo 5 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">🎯</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">05</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">EcoScore</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Evalúa el desempeño ecológico.</p>
+
+          <!-- GRUPO 2 (Duplicado exacto para crear el bucle infinito) -->
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_hotel_1785800485064.png" alt="Hotel" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hotel</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Alojamientos sostenibles.</p>
+            </div>
           </div>
-          <!-- Modulo 6 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">👥</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">06</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">Turismo Responsable</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Inspira decisiones sostenibles.</p>
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_restaurante_1785800492796.png" alt="Restaurante" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurante</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Gastronomía circular local.</p>
+            </div>
           </div>
-          <!-- Modulo 7 -->
-          <div class="glass-bubble w-32 p-4 flex flex-col items-center text-center hover:-translate-y-2 transition-transform cursor-pointer border border-white/10 rounded-[2rem]">
-            <span class="text-white/60 text-xl mb-2">⭐</span>
-            <span class="text-[10px] text-white/40 font-mono mb-1">07</span>
-            <h4 class="text-[11px] font-bold text-white mb-2 leading-tight">EcoPoints</h4>
-            <p class="text-[9px] text-white/50 leading-tight">Gana puntos y canjéalos.</p>
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_guia_1785800500716.png" alt="Guías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Guías Turísticos</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Rutas de mínimo impacto.</p>
+            </div>
+          </div>
+          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_foto_1785800509198.png" alt="Fotografías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Fotografías</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Turismo responsable.</p>
+            </div>
           </div>
         </div>
       </section>

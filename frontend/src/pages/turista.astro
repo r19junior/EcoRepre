@@ -31,7 +31,7 @@ import '../styles/global.css';
           <a href="/#impacto" class="hover:text-white transition-colors">Impacto</a>
         </div>
         <div class="flex items-center gap-4">
-          <a href="/turista#auth" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
+          <a href="/turista#auth" id="nav-login-btn" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
             Inicia tus Puntos
           </a>
           <a href="/empresa" class="hidden md:block bg-[#7A1F3D] hover:bg-[#92284B] text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transition-all">
@@ -91,5 +91,32 @@ import '../styles/global.css';
         </div>
       </div>
     </footer>
+
+    <script>
+      // Sincronización global de sesión para el Navbar
+      const updateNav = () => {
+        const loginBtn = document.getElementById('nav-login-btn');
+        if (loginBtn) {
+          const userStr = localStorage.getItem('loggedUser');
+          if (userStr) {
+            loginBtn.textContent = 'Cerrar Sesión';
+            loginBtn.href = '#';
+            loginBtn.onclick = (e) => {
+              e.preventDefault();
+              localStorage.removeItem('loggedUser');
+              window.location.reload();
+            };
+          } else {
+            loginBtn.textContent = 'Inicia tus Puntos';
+            loginBtn.href = '/turista#auth';
+            loginBtn.onclick = null;
+          }
+        }
+      };
+      
+      // Ejecutar al cargar y monitorear cambios
+      updateNav();
+      setInterval(updateNav, 1000);
+    </script>
   </body>
 </html>
