@@ -7,35 +7,6 @@ import '../styles/global.css';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EcoLoop Arequipa</title>
-    <style>
-      body {
-        background-color: #101114;
-        color: #F7F8FA;
-        min-height: 100vh;
-      }
-      .glass-bubble {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        border-radius: 24px;
-      }
-      .gradient-text-guinda {
-        background: linear-gradient(135deg, #92284B, #7A1F3D);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
   </head>
   <body class="font-sans antialiased overflow-x-hidden selection:bg-[#7A1F3D] selection:text-white relative">
     
@@ -61,6 +32,9 @@ import '../styles/global.css';
           <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="flex items-center gap-4">
+          <a href="/turista#auth" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
+            Inicia tus Puntos
+          </a>
           <a href="/empresa" class="hidden md:block bg-[#7A1F3D] hover:bg-[#92284B] text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transition-all">
             Unirse a la Red
           </a>
