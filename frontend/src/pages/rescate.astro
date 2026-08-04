@@ -48,6 +48,15 @@ import '../styles/global.css';
           </a>
         </div>
         <div class="flex items-center gap-4">
+          <!-- Selector de Idioma -->
+          <div class="relative group cursor-pointer py-2">
+            <span class="text-white/80 text-sm font-semibold group-hover:text-white transition-colors">ES ▾</span>
+            <div class="absolute top-full mt-2 right-0 bg-[#101114]/95 backdrop-blur-md border border-white/10 rounded-xl p-2 flex flex-col min-w-[120px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl z-50 transform origin-top-right scale-95 group-hover:scale-100">
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors flex items-center justify-between">Español <span class="text-[#F1B400]">✓</span></a>
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors">English</a>
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors">Français</a>
+            </div>
+          </div>
           <div class="relative group cursor-pointer py-2">
             <div class="hidden md:flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20 group-hover:bg-white/20 transition-all">
               <span class="text-white text-xs">Hola, <b>Turista Explorador</b></span>
