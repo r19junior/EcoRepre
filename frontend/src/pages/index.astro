@@ -6,9 +6,11 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EcoLoop Arequipa</title>
+    <title>KAYPI | Todo Arequipa, aquí.</title>
+    <link rel="icon" type="image/png" href="/kaypi_favicon_1785822463981.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="font-sans antialiased overflow-x-hidden selection:bg-[#7A1F3D] selection:text-white relative">
+  <body class="font-['Quicksand',_sans-serif] antialiased overflow-x-hidden selection:bg-[#7A1E2D] selection:text-white relative">
     
     <!-- Imagen de Fondo Principal Continua -->
     <div class="fixed inset-0 z-[-20] bg-[url('/hero.png')] bg-cover bg-center"></div>
@@ -18,27 +20,39 @@ import '../styles/global.css';
     <nav class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3 cursor-pointer">
-          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-            <span class="font-bold text-[#7A1F3D] text-xs">ECO</span>
-          </div>
-          <span class="font-bold tracking-widest text-lg text-white">LOOP</span>
+          <img src="/kaypi_logo_1785822457628.png" alt="KAYPI Logo" class="h-10 w-auto rounded-lg" />
+          <span class="font-extrabold tracking-widest text-xl text-white">KAYPI</span>
         </a>
         <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white/80">
           <a href="#" class="text-[#92284B] font-bold">Inicio</a>
-          <a href="#que-es" class="hover:text-white transition-colors">¿Qué es EcoLoop?</a>
+          <a href="#que-es" class="hover:text-white transition-colors">¿Qué es KAYPI?</a>
           <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
           <a href="#impacto" class="hover:text-white transition-colors">Impacto</a>
           <a href="/turista" class="hover:text-white transition-colors">Lugares</a>
           <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
         </div>
         <div class="flex items-center gap-4">
-          <a href="/turista#auth" id="nav-login-btn" class="hidden md:block text-white hover:text-[#92284B] font-bold text-sm transition-colors">
-            Inicia tus Puntos
-          </a>
-          <a href="/empresa" class="hidden md:block bg-[#7A1F3D] hover:bg-[#92284B] text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg transition-all">
-            Unirse a la Red
-          </a>
-          <span class="text-white/80 text-sm font-semibold cursor-pointer hover:text-white">ES ▾</span>
+          <button id="btn-anexar-empresa" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-bold border border-white/20 transition-all">
+            Unirse a KAYPI
+          </button>
+          <button id="btn-iniciar-sesion" class="bg-[#7A1F3D] hover:bg-[#92284B] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-lg transition-all">
+            Iniciar Sesión
+          </button>
+          <div class="relative group cursor-pointer py-2">
+            <span class="text-white/80 text-sm font-semibold group-hover:text-white transition-colors">ES ▾</span>
+            <!-- Dropdown de idiomas -->
+            <div class="absolute top-full mt-2 right-0 bg-[#101114]/95 backdrop-blur-md border border-white/10 rounded-xl p-2 flex flex-col min-w-[120px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl z-50 transform origin-top-right scale-95 group-hover:scale-100">
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors flex items-center justify-between">
+                Español <span class="text-[#F1B400]">✓</span>
+              </a>
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors">
+                English
+              </a>
+              <a href="#" class="text-white/70 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-sm transition-colors">
+                Français
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -49,29 +63,28 @@ import '../styles/global.css';
       <section class="max-w-7xl mx-auto px-6 mb-16 flex flex-col lg:flex-row items-center gap-12">
         <!-- Hero Text -->
         <div class="flex-1 text-center lg:text-left">
-          <div class="inline-block px-4 py-1.5 rounded-full glass-bubble border border-white/20 text-[10px] font-semibold uppercase tracking-widest text-white/80 mb-6">
-            LUXURY CIRCULAR TECH
-          </div>
-          <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight leading-tight text-white drop-shadow-md">
-            Conectando el <br />
-            <span class="text-[#92284B] drop-shadow-sm">Futuro Sostenible</span>
+          <h1 class="text-6xl md:text-8xl font-extrabold mb-2 tracking-tighter leading-none text-white drop-shadow-lg uppercase">
+            KAYPI
           </h1>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-[#F1B400] drop-shadow-sm">
+            Todo Arequipa, <span class="text-[#7A1E2D]">aquí.</span>
+          </h2>
           <p class="text-sm md:text-base text-white/80 mb-8 max-w-xl font-light leading-relaxed mx-auto lg:mx-0">
-            EcoLoop Arequipa es la infraestructura digital que transforma los residuos del turismo en oportunidades para toda la ciudad.
+            Para los turistas que visitan Arequipa, nuestra propuesta es una plataforma web que reúne en un solo lugar hospedajes, restaurantes, atractivos, guías y actividades, porque les permite planificar su viaje de forma más rápida, organizada y confiable, mientras descubren más experiencias y negocios locales.
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start mt-4">
-            <a href="/turista" class="bg-[#7A1F3D] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_30px_rgba(122,31,61,0.3)] hover:bg-[#92284B] transition-all flex items-center gap-2 text-base md:text-lg">
-              Explorar plataforma →
+            <a href="/eventos" class="bg-[#7A1F3D] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_30px_rgba(122,31,61,0.3)] hover:bg-[#92284B] transition-all flex items-center gap-2 text-base md:text-lg">
+              Gana Puntos →
             </a>
-            <a href="#" class="glass-bubble text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all border border-white/20 text-base md:text-lg">
-              Ver impacto en tiempo real
+            <a href="/turista" class="glass-bubble text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all border border-white/20 text-base md:text-lg">
+              Crear mi itinerario
             </a>
           </div>
         </div>
         
         <!-- Impact Panel -->
         <div class="w-full lg:w-[420px] glass-bubble p-6 border border-white/20 relative overflow-hidden shadow-2xl">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#7A1F3D]/20 to-[#101114] pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-[#7A1E2D]/20 to-[#101114] pointer-events-none"></div>
           
           <h3 class="text-white font-bold text-sm mb-5 relative z-10 flex items-center justify-between">
             <span>Impacto en la Red Local</span>
@@ -136,95 +149,119 @@ import '../styles/global.css';
         
         <div class="marquee-content gap-6 pt-2 pb-6">
           <!-- GRUPO 1 -->
-          <!-- Modulo 1: Hotel -->
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Hoteles / Hospedajes" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_hotel_1785800485064.png" alt="Hotel" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hotel</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Alojamientos sostenibles.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hoteles / Hospedajes</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Alojamientos oficiales.</p>
             </div>
           </div>
-          <!-- Modulo 2: Restaurante -->
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Restaurantes" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_restaurante_1785800492796.png" alt="Restaurante" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurante</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Gastronomía circular local.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurantes</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Gastronomía local.</p>
             </div>
           </div>
-          <!-- Modulo 3: Guías Turísticos -->
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Atractivos Turísticos" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_atractivo.png" alt="Atractivos" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Atractivos</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Descubre maravillas.</p>
+            </div>
+          </div>
+          <div data-categoria="Guías Turísticos" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_guia_1785800500716.png" alt="Guías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
               <h4 class="text-sm font-bold text-white mb-1 leading-tight">Guías Turísticos</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Rutas de mínimo impacto.</p>
+              <p class="text-[10px] text-white/50 leading-tight">Rutas seguras.</p>
             </div>
           </div>
-          <!-- Modulo 4: Fotografías -->
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
-            <img src="/mod_foto_1785800509198.png" alt="Fotografías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+          <div data-categoria="Actividades" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_actividad.png" alt="Actividades" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Fotografías</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Turismo responsable.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Actividades</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Experiencias únicas.</p>
             </div>
           </div>
 
           <!-- GRUPO 2 (Duplicado exacto para crear el bucle infinito) -->
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Hoteles / Hospedajes" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_hotel_1785800485064.png" alt="Hotel" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hotel</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Alojamientos sostenibles.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Hoteles / Hospedajes</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Alojamientos oficiales.</p>
             </div>
           </div>
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Restaurantes" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_restaurante_1785800492796.png" alt="Restaurante" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurante</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Gastronomía circular local.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Restaurantes</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Gastronomía local.</p>
             </div>
           </div>
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+          <div data-categoria="Atractivos Turísticos" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_atractivo.png" alt="Atractivos" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+            <div class="text-left">
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Atractivos</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Descubre maravillas.</p>
+            </div>
+          </div>
+          <div data-categoria="Guías Turísticos" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
             <img src="/mod_guia_1785800500716.png" alt="Guías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
               <h4 class="text-sm font-bold text-white mb-1 leading-tight">Guías Turísticos</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Rutas de mínimo impacto.</p>
+              <p class="text-[10px] text-white/50 leading-tight">Rutas seguras.</p>
             </div>
           </div>
-          <div class="glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
-            <img src="/mod_foto_1785800509198.png" alt="Fotografías" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
+          <div data-categoria="Actividades" class="btn-categoria glass-bubble w-72 p-4 flex items-center gap-4 hover:-translate-y-1 transition-transform cursor-pointer border border-white/10 rounded-2xl flex-shrink-0">
+            <img src="/mod_actividad.png" alt="Actividades" class="w-20 h-20 rounded-xl object-cover shadow-lg" />
             <div class="text-left">
-              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Fotografías</h4>
-              <p class="text-[10px] text-white/50 leading-tight">Turismo responsable.</p>
+              <h4 class="text-sm font-bold text-white mb-1 leading-tight">Actividades</h4>
+              <p class="text-[10px] text-white/50 leading-tight">Experiencias únicas.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 4. ¿Qué es EcoLoop? -->
+      <!-- 4. Sobre la Plataforma -->
       <section id="que-es" class="scroll-mt-24 max-w-7xl mx-auto px-6 mb-24 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-white mb-4">¿Qué es EcoLoop?</h2>
+          <h2 class="text-3xl font-bold text-white mb-4">Sobre la Plataforma</h2>
           <p class="text-white/70 mb-4 text-sm font-light leading-relaxed">
-            EcoLoop Arequipa es un ecosistema digital de economía circular que conecta hoteles, restaurantes, artesanos, agricultores, recicladores, municipalidades y turistas en una red inteligente.
+            Esta plataforma busca ser la infraestructura digital integrada que el ecosistema turístico de Arequipa necesitaba para conectar a visitantes y actores locales.
           </p>
-          <p class="text-[#92284B] font-semibold text-sm leading-snug">
-            Los residuos del turismo nunca se convierten en basura, sino en oportunidades para toda la ciudad.
-          </p>
+          <div class="bg-[#7A1E2D]/40 border border-[#F1B400]/30 p-4 rounded-xl backdrop-blur-sm mt-4 shadow-lg inline-block">
+            <ul class="text-[#F1B400] font-bold text-xs space-y-2">
+              <li>• Organiza todo tu viaje desde un solo lugar.</li>
+              <li>• Ahorra tiempo al planificar.</li>
+              <li>• Encuentra información clara y confiable.</li>
+              <li>• Descubre nuevos lugares y negocios locales.</li>
+            </ul>
+          </div>
         </div>
         
         <div class="flex flex-col items-center justify-center relative py-6">
-          <!-- RECUADRO IMAGEN CENTRAL -->
-          <div class="w-48 h-48 rounded-full glass-bubble flex items-center justify-center border border-white/20 relative z-10 overflow-hidden shadow-2xl">
-             <div class="text-center p-4">
-               <span class="text-white/30 text-[10px] block mb-1">[RECUADRO IMAGEN]</span>
-               <span class="text-white/50 text-xs font-bold">Logo 3D</span>
+          <!-- OBJETO 3D FÍSICO (Imagen generada sin el cuadrado blanco) -->
+          <div class="w-56 h-56 rounded-[2rem] glass-bubble flex items-center justify-center border border-white/20 relative z-10 shadow-2xl bg-black/40 perspective-[1200px]">
+             
+             <!-- Contenedor Circular Rotando (Recorta el fondo blanco cuadrado) -->
+             <div class="w-48 h-48 rounded-full bg-white overflow-hidden border-[6px] border-[#F1B400] shadow-[0_0_30px_rgba(241,180,0,0.4)] animate-3d-object cursor-pointer flex items-center justify-center relative">
+               
+               <!-- Cara Frontal (Imagen generada) -->
+               <div class="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center bg-white">
+                 <img src="/kaypi_new_3d_pin.png" alt="KAYPI Logo 3D Generado" class="w-[110%] h-[110%] max-w-none object-cover" />
+               </div>
+               
+               <!-- Cara Trasera -->
+               <div class="absolute inset-0 w-full h-full backface-hidden bg-[#7A1E2D] flex items-center justify-center [transform:rotateY(180deg)]">
+                 <img src="/kaypi_new_3d_pin.png" alt="KAYPI Trasero" class="w-[110%] h-[110%] max-w-none object-cover brightness-0 invert opacity-50" />
+               </div>
+
              </div>
+
           </div>
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#7A1F3D]/20 rounded-full blur-[40px] -z-10"></div>
-          <div class="mt-4 bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] text-white/80 rounded-full flex items-center gap-2 backdrop-blur-md">
-            <span>🌋</span> Hecho para Arequipa
-          </div>
         </div>
 
         <div>
@@ -260,8 +297,8 @@ import '../styles/global.css';
           <!-- Card Lugar -->
           <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
             <!-- RECUADRO IMAGEN -->
-            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
-              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: CENTRO HISTÓRICO]</span>
+            <div class="h-32 bg-white/5 relative overflow-hidden border-b border-white/5">
+              <img src="/loc_centro_historico.png" alt="Centro Histórico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div class="p-5">
               <h3 class="text-sm font-bold text-white mb-1">Centro Histórico</h3>
@@ -271,8 +308,8 @@ import '../styles/global.css';
           <!-- Card Lugar -->
           <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
             <!-- RECUADRO IMAGEN -->
-            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
-              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: CAYMA]</span>
+            <div class="h-32 bg-white/5 relative overflow-hidden border-b border-white/5">
+              <img src="/loc_cayma.png" alt="Cayma y Yanahuara" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div class="p-5">
               <h3 class="text-sm font-bold text-white mb-1">Cayma & Yanahuara</h3>
@@ -282,8 +319,8 @@ import '../styles/global.css';
           <!-- Card Lugar -->
           <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
             <!-- RECUADRO IMAGEN -->
-            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
-              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: VALLE DEL COLCA]</span>
+            <div class="h-32 bg-white/5 relative overflow-hidden border-b border-white/5">
+              <img src="/loc_colca.png" alt="Valle del Colca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div class="p-5">
               <h3 class="text-sm font-bold text-white mb-1">Valle del Colca</h3>
@@ -293,8 +330,8 @@ import '../styles/global.css';
           <!-- Card Lugar -->
           <div class="snap-start min-w-[260px] glass-bubble rounded-[2rem] overflow-hidden group border border-white/10">
             <!-- RECUADRO IMAGEN -->
-            <div class="h-32 bg-white/5 relative flex items-center justify-center border-b border-white/5">
-              <span class="text-white/20 text-[10px] font-mono font-bold">[IMG: MOLLENDO]</span>
+            <div class="h-32 bg-white/5 relative overflow-hidden border-b border-white/5">
+              <img src="/loc_mollendo.png" alt="Mollendo y Camaná" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div class="p-5">
               <h3 class="text-sm font-bold text-white mb-1">Mollendo & Camaná</h3>
@@ -309,37 +346,37 @@ import '../styles/global.css';
         <h2 class="text-3xl font-bold text-white mb-6">Beneficios para todos</h2>
         <div class="flex flex-col lg:flex-row gap-6">
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4 flex-1">
-            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
-              <span class="text-white/50 text-2xl mb-2">💼</span>
-              <h4 class="text-xs font-bold text-white mb-1">Para Negocios</h4>
-              <p class="text-[9px] text-white/50">Reduce costos y accede a beneficios.</p>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10 group">
+              <img src="/ben_tiempo.png" alt="Ahorra tiempo" class="h-14 w-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-xl" />
+              <h4 class="text-xs font-bold text-white mb-1">Ahorra tiempo</h4>
+              <p class="text-[9px] text-white/50">Organiza tu viaje sin complicaciones.</p>
             </div>
-            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
-              <span class="text-white/50 text-2xl mb-2">🏙️</span>
-              <h4 class="text-xs font-bold text-white mb-1">Para la Ciudad</h4>
-              <p class="text-[9px] text-white/50">Menos residuos, más desarrollo.</p>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10 group">
+              <img src="/ben_seguridad.png" alt="Decisiones seguras" class="h-14 w-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-xl" />
+              <h4 class="text-xs font-bold text-white mb-1">Decisiones seguras</h4>
+              <p class="text-[9px] text-white/50">Información oficial y 100% confiable.</p>
             </div>
-            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
-              <span class="text-white/50 text-2xl mb-2">👨‍👩‍👧‍👦</span>
-              <h4 class="text-xs font-bold text-white mb-1">Para la Comunidad</h4>
-              <p class="text-[9px] text-white/50">Nuevas oportunidades locales.</p>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10 group">
+              <img src="/ben_experiencia.png" alt="Experiencias únicas" class="h-14 w-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-xl" />
+              <h4 class="text-xs font-bold text-white mb-1">Experiencias únicas</h4>
+              <p class="text-[9px] text-white/50">Descubre negocios y lugares locales.</p>
             </div>
-            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10">
-              <span class="text-white/50 text-2xl mb-2">🌍</span>
-              <h4 class="text-xs font-bold text-white mb-1">Para el Planeta</h4>
-              <p class="text-[9px] text-white/50">Recursos para futuras generaciones.</p>
+            <div class="glass-bubble p-5 flex flex-col items-center justify-center text-center border-white/10 group">
+              <img src="/ben_lugar.png" alt="Todo en un lugar" class="h-14 w-auto mb-3 object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-xl" />
+              <h4 class="text-xs font-bold text-white mb-1">Todo en un lugar</h4>
+              <p class="text-[9px] text-white/50">Hospedaje, comida y tours centralizados.</p>
             </div>
           </div>
           
           <div class="flex-1 rounded-[2rem] bg-gradient-to-br from-[#7A1F3D]/80 to-[#431322]/90 backdrop-blur-md p-8 flex flex-col justify-center relative overflow-hidden border border-[#92284B]/50 shadow-2xl">
             <div class="absolute right-[-10%] top-[-10%] w-64 h-64 bg-[#92284B]/20 rounded-full blur-[40px] pointer-events-none"></div>
-            <h3 class="text-2xl font-bold text-white mb-2 relative z-10">Únete al cambio</h3>
+            <h3 class="text-2xl font-bold text-white mb-2 relative z-10">Crea tu Itinerario</h3>
             <p class="text-white/80 text-xs mb-6 relative z-10 max-w-sm leading-relaxed">
-              Sé parte de la red que está construyendo una Arequipa más limpia, próspera y sostenible.
+              Planifica tu viaje de manera inteligente y descubre lo mejor de Arequipa en minutos.
             </p>
             <div class="relative z-10">
               <button class="bg-white text-[#7A1F3D] px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
-                Unirme ahora →
+                Empezar a planificar →
               </button>
             </div>
           </div>
@@ -361,23 +398,23 @@ import '../styles/global.css';
              <span class="text-2xl text-white/40">👥</span>
              <div class="text-left">
                <div class="text-xl font-bold text-white">+450</div>
-               <div class="text-[10px] text-white/50">Usuarios activos</div>
+                <div class="text-[10px] text-white/50">Turistas ayudados</div>
              </div>
           </div>
           <div class="hidden md:block w-px h-8 bg-white/10"></div>
           <div class="flex items-center gap-3">
              <span class="text-2xl text-white/40">☁️</span>
              <div class="text-left">
-               <div class="text-xl font-bold text-white">+18 t</div>
-               <div class="text-[10px] text-white/50">CO₂ evitadas</div>
+                <div class="text-xl font-bold text-white">+50</div>
+                <div class="text-[10px] text-white/50">Destinos oficiales</div>
              </div>
           </div>
           <div class="hidden md:block w-px h-8 bg-white/10"></div>
           <div class="flex items-center gap-3">
              <span class="text-2xl text-white/40">♻️</span>
              <div class="text-left">
-               <div class="text-xl font-bold text-white">+2.4 M</div>
-               <div class="text-[10px] text-white/50">Recursos valorizados</div>
+                <div class="text-xl font-bold text-white">+1,200</div>
+                <div class="text-[10px] text-white/50">Itinerarios creados</div>
              </div>
           </div>
         </div>
@@ -389,11 +426,9 @@ import '../styles/global.css';
     <footer id="contacto" class="bg-transparent relative z-10 border-t border-white/5">
       <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1">
-          <div class="flex items-center gap-2 mb-3">
-            <div class="w-6 h-6 rounded-full bg-[#7A1F3D] flex items-center justify-center">
-              <span class="font-bold text-white text-[8px]">ECO</span>
-            </div>
-            <span class="font-bold tracking-widest text-sm text-white">LOOP</span>
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/kaypi_logo_1785822457628.png" alt="KAYPI Logo" class="h-8 w-auto rounded-lg" />
+            <span class="font-extrabold tracking-widest text-lg text-white">KAYPI</span>
           </div>
           <p class="text-[10px] text-white/50 leading-relaxed">Conectamos recursos,<br/>transformamos Arequipa.</p>
         </div>
@@ -427,7 +462,7 @@ import '../styles/global.css';
       </div>
       
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[9px] text-white/30 pb-6">
-        <p>© 2026 EcoLoop Arequipa. Todos los derechos reservados.</p>
+        <p>© 2026 KAYPI. Todos los derechos reservados.</p>
         <div class="flex gap-4 mt-2 md:mt-0">
           <a href="#" class="hover:text-white">Política de Privacidad</a>
           <a href="#" class="hover:text-white">Términos y Condiciones</a>
@@ -435,5 +470,197 @@ import '../styles/global.css';
       </div>
     </footer>
     
+    <script>
+      import Swal from 'sweetalert2';
+
+      // Formulario para anexar empresa
+      const btnAnexar = document.getElementById('btn-anexar-empresa');
+      if (btnAnexar) {
+        btnAnexar.addEventListener('click', () => {
+          Swal.fire({
+            title: 'Solicitud de Integración KAYPI',
+            width: '850px',
+            html: `
+              <div class="flex flex-col md:flex-row gap-8 text-left mt-4">
+                <!-- Beneficios (Izquierda) -->
+                <div class="md:w-1/3 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+                  <h3 class="text-lg font-bold text-[#F1B400] mb-4">¿Por qué unirte?</h3>
+                  <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                      <span class="text-xl">🌍</span>
+                      <div>
+                        <strong class="block text-sm text-white">Turistas Internacionales</strong>
+                        <span class="text-[10px] text-white/60">Posiciónate frente a miles de viajeros que buscan experiencias auténticas.</span>
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-xl">📱</span>
+                      <div>
+                        <strong class="block text-sm text-white">Canal Digital Directo</strong>
+                        <span class="text-[10px] text-white/60">Aparece en los itinerarios y mapas generados por nuestra inteligencia.</span>
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-xl">♻️</span>
+                      <div>
+                        <strong class="block text-sm text-white">Sello Sostenible</strong>
+                        <span class="text-[10px] text-white/60">Destaca como un negocio responsable y aumenta tu reputación.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                <!-- Formulario (Derecha) -->
+                <div class="md:w-2/3">
+                  <p class="text-xs text-white/70 mb-4">Completa el formulario para iniciar tu proceso de afiliación comercial.</p>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div>
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Nombre Comercial</label>
+                  <input id="swal-empresa" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="Ej. Hotel El Convento">
+                </div>
+                <div>
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">RUC / NIT</label>
+                  <input id="swal-ruc" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="1045...">
+                </div>
+                <div>
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Rubro Principal</label>
+                  <select id="swal-tipo" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none">
+                    <option value="Hospedaje">Hospedaje (Hotel, Hostal, etc.)</option>
+                    <option value="Restaurante">Gastronomía (Restaurante, Café)</option>
+                    <option value="Atractivo">Atractivo Turístico / Museo</option>
+                    <option value="Guia">Operador Turístico / Guía</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Teléfono o WhatsApp</label>
+                  <input id="swal-phone" type="tel" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="+51 ...">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Representante Legal / Contacto</label>
+                  <input id="swal-rep" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="Nombre completo">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Correo Electrónico</label>
+                  <input id="swal-email" type="email" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="correo@empresa.com">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="text-[10px] text-white/50 uppercase font-bold ml-1">Dirección del Local</label>
+                  <input id="swal-dir" class="w-full bg-black/40 border border-white/20 text-white rounded-lg p-3 text-sm focus:border-[#F1B400] outline-none" placeholder="Calle, Distrito">
+                </div>
+                  <div class="md:col-span-2 mt-2 flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/10">
+                    <input type="checkbox" id="swal-sostenible" class="w-5 h-5 accent-[#7A1F3D] cursor-pointer">
+                    <label for="swal-sostenible" class="text-xs text-white/80 cursor-pointer leading-tight">Nos comprometemos a implementar prácticas de turismo sostenible e inclusivo.</label>
+                  </div>
+                </div>
+              </div>
+            `,
+            background: '#101114',
+            color: '#fff',
+            showCancelButton: true,
+            confirmButtonColor: '#7A1F3D',
+            cancelButtonColor: '#333',
+            confirmButtonText: 'Enviar Solicitud',
+            cancelButtonText: 'Cancelar',
+            customClass: { popup: 'border border-white/20 rounded-3xl p-4' }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: '¡Solicitud Recibida!',
+                text: 'Nuestro equipo evaluará los datos de tu empresa y nos comunicaremos contigo al correo indicado para continuar el proceso de afiliación comercial.',
+                icon: 'success',
+                background: '#101114',
+                color: '#fff',
+                confirmButtonColor: '#7A1F3D'
+              });
+            }
+          });
+        });
+      }
+
+      // Iniciar sesión lleva al dashboard simulado
+      const btnLogin = document.getElementById('btn-iniciar-sesion');
+      if (btnLogin) {
+        btnLogin.addEventListener('click', () => {
+          window.location.href = '/turista';
+        });
+      }
+
+      // Popups de Rankings por Categoría en el Carrusel
+      const dataLugares = {
+        "Hoteles / Hospedajes": [
+          { nombre: "Hotel Casa Andina Premium", img: "/mod_hotel_1785800485064.png", rating: "4.9 (240 reseñas)" },
+          { nombre: "El Monasterio Eco-Lodge", img: "/mod_hotel_1785800485064.png", rating: "4.8 (189 reseñas)" },
+          { nombre: "Hostal La Recoleta", img: "/mod_hotel_1785800485064.png", rating: "4.7 (95 reseñas)" }
+        ],
+        "Restaurantes": [
+          { nombre: "Chicha por Gastón Acurio", img: "/mod_restaurante_1785800492796.png", rating: "4.9 (420 reseñas)" },
+          { nombre: "La Benita de los Claustros", img: "/mod_restaurante_1785800492796.png", rating: "4.8 (310 reseñas)" },
+          { nombre: "Zig Zag Restaurant", img: "/mod_restaurante_1785800492796.png", rating: "4.7 (200 reseñas)" }
+        ],
+        "Atractivos Turísticos": [
+          { nombre: "Monasterio Santa Catalina", img: "/mod_atractivo.png", rating: "4.9 (1200 reseñas)" },
+          { nombre: "Mirador de Yanahuara", img: "/mod_atractivo.png", rating: "4.8 (850 reseñas)" },
+          { nombre: "Canteras de Sillar Añashuayco", img: "/mod_atractivo.png", rating: "4.8 (900 reseñas)" }
+        ],
+        "Guías Turísticos": [
+          { nombre: "Arequipa Explorer Tours", img: "/mod_guia_1785800500716.png", rating: "4.9 (150 reseñas)" },
+          { nombre: "Colca Trekking Oficial", img: "/mod_guia_1785800500716.png", rating: "4.8 (110 reseñas)" },
+          { nombre: null } // Fallback handled in code if less than 3
+        ],
+        "Actividades": [
+          { nombre: "Rafting en Río Chili", img: "/mod_actividad.png", rating: "4.9 (320 reseñas)" },
+          { nombre: "Taller de Cocina Arequipeña", img: "/mod_actividad.png", rating: "4.8 (150 reseñas)" },
+          { nombre: "Tour Fotográfico del Centro", img: "/mod_actividad.png", rating: "4.7 (100 reseñas)" }
+        ]
+      };
+
+      const btnCategorias = document.querySelectorAll('.btn-categoria');
+      btnCategorias.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const categoria = e.currentTarget.getAttribute('data-categoria');
+          const lugares = dataLugares[categoria] || dataLugares["Actividades"];
+          
+          let htmlLugares = '';
+          lugares.forEach((lugar, index) => {
+            if(!lugar.nombre) return;
+            const esPrimero = index === 0;
+            htmlLugares += `
+              <div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border ${esPrimero ? 'border-[#F1B400]/50' : 'border-white/10'} hover:bg-white/10 transition-colors">
+                <div class="w-8 h-8 rounded-full ${esPrimero ? 'bg-[#F1B400] text-black shadow-[0_0_15px_rgba(241,180,0,0.5)]' : 'bg-white/20 text-white'} font-bold flex items-center justify-center shrink-0">${index + 1}</div>
+                <img src="${lugar.img}" class="w-12 h-12 rounded-lg object-cover border border-white/20" alt="Lugar">
+                <div class="flex-1">
+                  <h4 class="text-white font-bold text-sm">${lugar.nombre}</h4>
+                  <p class="text-white/50 text-[10px]">⭐ ${lugar.rating} ${esPrimero ? '• 🏆 Sello KAYPI' : ''}</p>
+                </div>
+              </div>
+            `;
+          });
+
+          Swal.fire({
+            title: `Top Rankings: ${categoria}`,
+            html: `
+              <div class="text-left mt-2">
+                <p class="text-sm text-white/70 mb-4">Estos son los lugares mejor valorados por nuestra comunidad responsable.</p>
+                <div class="space-y-3 mb-6">
+                  ${htmlLugares}
+                </div>
+              </div>
+            `,
+            background: '#101114',
+            color: '#fff',
+            showCancelButton: true,
+            confirmButtonColor: '#7A1F3D',
+            cancelButtonColor: '#333',
+            confirmButtonText: 'Crear mi itinerario ✨',
+            cancelButtonText: 'Cerrar',
+            customClass: { popup: 'border border-white/20 rounded-3xl' }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = '/ruta';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

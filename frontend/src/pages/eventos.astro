@@ -1,12 +1,12 @@
 ---
-import DirectorioIntegrado from '../components/DirectorioIntegrado';
+import ListaEventos from '../components/ListaEventos';
 import '../styles/global.css';
 ---
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Directorio Integrado | KAYPI</title>
+    <title>Eventos y Puntos | KAYPI</title>
     <link rel="icon" type="image/png" href="/kaypi_favicon_1785822463981.png" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
@@ -24,8 +24,8 @@ import '../styles/global.css';
           <span class="font-extrabold tracking-widest text-xl text-white">KAYPI</span>
         </a>
         <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-white/80">
-          <a href="/eventos" class="hover:text-white transition-colors">Eventos</a>
-          <a href="/turista" class="text-[#F1B400] font-bold">Lugares y Servicios</a>
+          <a href="/eventos" class="text-[#F1B400] font-bold">Eventos</a>
+          <a href="/turista" class="hover:text-white transition-colors">Lugares y Servicios</a>
           <a href="/ruta" class="hover:text-white transition-colors">Planifica tu ruta</a>
           <a href="/rescate" class="text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center gap-1">
             Rescate de Comida
@@ -63,65 +63,33 @@ import '../styles/global.css';
 
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20 w-full min-h-screen flex flex-col">
-      <section class="max-w-7xl mx-auto px-6 mb-12 text-center">
+      <section class="max-w-7xl mx-auto px-6 mb-16 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-md">
-          Directorio <span class="text-[#F1B400]">Integrado</span>
+          Festividades y <span class="text-[#F1B400]">Puntos</span>
         </h1>
         <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base font-light">
-          Encuentra hospedajes, restaurantes, atractivos, guías y actividades. Todo en un solo lugar.
+          Asiste a eventos, escanea tu código QR y gana puntos para canjearlos por descuentos en hospedajes y restaurantes.
         </p>
       </section>
       
-      <!-- Componente del Directorio Integrado -->
+      <!-- Directorio de Eventos (Puntos) -->
       <section class="max-w-7xl mx-auto px-6 mb-24 w-full flex-grow">
-        <DirectorioIntegrado client:load />
+        <ListaEventos client:load />
       </section>
     </main>
 
-    <!-- Footer Unificado KAYPI -->
-    <footer class="bg-transparent relative z-10 border-t border-white/5">
-      <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="col-span-1">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="font-extrabold tracking-widest text-lg text-white">KAYPI</span>
-          </div>
-          <p class="text-[10px] text-white/50 leading-relaxed">Tu viaje organizado,<br/>rápido y confiable.</p>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-3 text-xs">Síguenos</h4>
-          <div class="flex gap-2">
-            <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#7A1F3D] hover:text-white cursor-pointer transition-colors text-[10px]">IG</div>
-            <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#7A1F3D] hover:text-white cursor-pointer transition-colors text-[10px]">FB</div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    <!-- Script de Auto-Login para Mockear la Sesión de inmediato -->
     <script>
-      // Sincronización global de sesión para el Navbar
-      const updateNav = () => {
-        const loginBtn = document.getElementById('nav-login-btn');
-        if (loginBtn) {
-          const userStr = localStorage.getItem('loggedUser');
-          if (userStr) {
-            loginBtn.textContent = 'Cerrar Sesión';
-            loginBtn.href = '#';
-            loginBtn.onclick = (e) => {
-              e.preventDefault();
-              localStorage.removeItem('loggedUser');
-              window.location.reload();
-            };
-          } else {
-            loginBtn.textContent = 'Inicia tus Puntos';
-            loginBtn.href = '/turista#auth';
-            loginBtn.onclick = null;
-          }
-        }
-      };
-      
-      // Ejecutar al cargar y monitorear cambios
-      updateNav();
-      setInterval(updateNav, 1000);
+      // Al cargar la página, inyectar el usuario simulado para saltarse el Login de RegistroPasaporteForm
+      if (typeof window !== 'undefined') {
+        const mockUser = {
+          nombre: "Turista Explorador",
+          documento: "87654321",
+          nacionalidad: "Extranjero",
+          puntos: 150
+        };
+        localStorage.setItem('loggedUser', JSON.stringify(mockUser));
+      }
     </script>
   </body>
 </html>

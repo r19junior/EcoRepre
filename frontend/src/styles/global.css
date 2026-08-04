@@ -41,6 +41,29 @@ body {
   animation-play-state: paused;
 }
 
+/* Animación 3D para el Objeto Físico (Moneda/Medallón) */
+@keyframes spin-3d-object {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.animate-3d-object {
+  animation: spin-3d-object 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-3d-object:hover {
+  animation-play-state: paused;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.animate-3d-spin:hover {
+  animation-play-state: paused;
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }

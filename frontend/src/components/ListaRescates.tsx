@@ -14,54 +14,54 @@ type Evento = {
   puntos: number;
 };
 
-const EVENTOS: Evento[] = [
+const RESCATES: Evento[] = [
   {
     id: 1,
-    nombre: 'Feria Circular Arequipa',
-    fecha: '15 de Octubre, 2026',
-    hora: '10:00 AM - 6:00 PM',
-    imagenUrl: '/evento_feria.png',
-    ubicacion: 'Plaza de Armas',
+    nombre: 'Menú Ejecutivo Sobrante',
+    fecha: 'Hoy, 3:00 PM',
+    hora: '3:00 PM - 4:30 PM',
+    imagenUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
+    ubicacion: 'Chicha por Gastón Acurio',
     googleMapsLink: 'https://goo.gl/maps/plaza_armas_arequipa',
-    descripcion: 'Intercambio de recursos y exposición de productos supra-reciclados locales hechos por artesanos de toda la región.',
-    puntos: 150
+    descripcion: 'Deliciosos platos del menú ejecutivo que quedaron intactos. ¡Ayúdanos a no desperdiciar y disfruta con un 50% de descuento!',
+    puntos: 20
   },
   {
     id: 2,
-    nombre: 'Taller de Eco-Turismo',
-    fecha: '22 de Octubre, 2026',
-    hora: '3:00 PM - 5:00 PM',
-    imagenUrl: '/evento_taller.png',
-    ubicacion: 'Centro Histórico (Casona Editora)',
+    nombre: 'Buffet de Desayuno',
+    fecha: 'Mañana, 10:30 AM',
+    hora: '10:30 AM - 11:30 AM',
+    imagenUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80',
+    ubicacion: 'Hotel Casa Andina Premium',
     googleMapsLink: 'https://goo.gl/maps/centro_historico_aqp',
-    descripcion: 'Capacitación inmersiva para turistas y guías sobre rutas de mínimo impacto ambiental y correcta gestión de mermas.',
-    puntos: 50
+    descripcion: 'Frutas, panes, y jugos del buffet matutino en perfecto estado. Abundante comida a una fracción de su costo original.',
+    puntos: 15
   },
   {
     id: 3,
-    nombre: 'Limpieza del Río Chili',
-    fecha: '05 de Noviembre, 2026',
-    hora: '8:00 AM - 1:00 PM',
-    imagenUrl: '/evento_limpieza.png',
-    ubicacion: 'Valle del Chilina',
+    nombre: 'Postres Artesanales',
+    fecha: 'Hoy, 8:00 PM',
+    hora: '8:00 PM - 9:30 PM',
+    imagenUrl: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80',
+    ubicacion: 'La Benita de los Claustros',
     googleMapsLink: 'https://goo.gl/maps/valle_chilina_aqp',
-    descripcion: 'Jornada de voluntariado masivo al aire libre para recuperar materiales valorizables de las riberas del río más importante de la ciudad.',
-    puntos: 300
+    descripcion: 'Llevate 2x1 en postres artesanales tradicionales arequipeños que preparamos hoy. ¡Súper frescos y a bajo costo!',
+    puntos: 10
   },
   {
     id: 4,
-    nombre: 'Congreso Hotelería Verde',
-    fecha: '12 de Noviembre, 2026',
-    hora: '9:00 AM - 2:00 PM',
-    imagenUrl: '/evento_congreso.png',
-    ubicacion: 'Cayma (Centro de Convenciones)',
+    nombre: 'Cena de Rescate',
+    fecha: 'Hoy, 9:00 PM',
+    hora: '9:00 PM - 10:00 PM',
+    imagenUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    ubicacion: 'Eco-Lodge Arequipa',
     googleMapsLink: 'https://goo.gl/maps/cayma_aqp',
-    descripcion: 'Encuentro exclusivo de empresas hoteleras que implementan la red KAYPI para maximizar su EcoScore y compartir estrategias.',
-    puntos: 100
+    descripcion: 'Porciones generosas de platos de fondo. Evitamos que la comida termine en la basura ofreciéndotela con un 70% de descuento.',
+    puntos: 25
   }
 ];
 
-export default function ListaEventos() {
+export default function ListaRescates() {
   // Estado para verificar sesión
   const [loggedUser, setLoggedUser] = useState<any>(null);
 
@@ -107,23 +107,23 @@ export default function ListaEventos() {
           
           <div class="bg-black/40 p-5 rounded-xl border border-white/10 space-y-3 mt-4">
             <div class="flex items-center gap-3">
-              <span class="text-lg">📅</span> 
-              <span><strong class="text-white">Fecha:</strong> ${evento.fecha}</span>
+              <span class="text-lg">Fecha</span> 
+              <span><strong class="text-white"></strong> ${evento.fecha}</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-lg">⏰</span> 
-              <span><strong class="text-white">Hora:</strong> ${evento.hora}</span>
+              <span class="text-lg">Hora</span> 
+              <span><strong class="text-white"></strong> ${evento.hora}</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-lg">📍</span> 
-              <span><strong class="text-white">Lugar:</strong> ${evento.ubicacion}</span>
+              <span class="text-lg">Lugar</span> 
+              <span><strong class="text-white"></strong> ${evento.ubicacion}</span>
             </div>
           </div>
         </div>
       `,
       showCancelButton: true,
       showConfirmButton: true,
-      confirmButtonText: 'Ver en Google Maps 🗺️',
+      confirmButtonText: 'Ver en Google Maps',
       cancelButtonText: 'Cerrar',
       confirmButtonColor: '#7A1F3D',
       cancelButtonColor: '#222',
@@ -159,7 +159,7 @@ export default function ListaEventos() {
         animate="show"
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
-        {EVENTOS.map((evento) => (
+        {RESCATES.map((evento) => (
           <motion.div
             key={evento.id}
             variants={itemVariants}
@@ -184,7 +184,6 @@ export default function ListaEventos() {
             
             <div className="p-8 flex-grow flex flex-col">
               <div className="flex items-center gap-2 mb-3 text-white/60 text-xs font-semibold">
-                <span className="text-[#92284B]">📍</span>
                 <span>{evento.ubicacion}</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{evento.nombre}</h3>
@@ -213,7 +212,7 @@ export default function ListaEventos() {
                     onClick={() => handleQRClick(evento.nombre)}
                     className="text-white font-bold text-sm hover:text-white transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 shadow-lg hover:shadow-emerald-500/30 px-5 py-3 rounded-full border border-transparent w-full sm:w-auto"
                   >
-                    <span className="text-lg leading-none">📱</span> Registra tus puntos (QR)
+                    Registra tus puntos (QR)
                   </button>
                 )}
               </div>
